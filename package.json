@@ -1,0 +1,28 @@
+{
+	"name": "pre-algebra",
+	"version": "1.0.0",
+	"description": "Arithmetic properties [https://www.khanacademy.org/math/pre-algebra/pre-algebra-arith-prop]",
+	"private": true,
+	"main": "index.js",
+	"scripts": {
+		"test": "mocha",
+		"test:watch": "mocha --watch"
+	},
+	"author": {
+		"name": "Ryan K. Clark",
+		"email": "mail.w3geek@gmail.com",
+		"url": "https://twitter.com/W3Geek"
+	},
+	"homepage": "https://github.com/W3G33K/pre-algebra",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/W3G33K/pre-algebra.git"
+	},
+	"devDependencies": {
+		"@types/chai": "^4.2.11",
+		"@types/mocha": "^7.0.2",
+		"chai": "^4.2.0",
+		"mocha": "^7.1.1"
+	}
+}

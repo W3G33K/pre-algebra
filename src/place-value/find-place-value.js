@@ -1,11 +1,5 @@
-let places = [
-	"ones", "tens", "hundreds",
-	"thousands", "ten-thousands", "hundred-thousands",
-	"millions", "ten-millions", "hundred-millions",
-	"billions", "ten-billions", "hundred-billions",
-	"trillions", "ten-trillions", "hundred-trillions",
-	"quadrillions"
-];
+/** @imports **/
+const PlaceColumns = require("/lib/enum/impl/place-columns.enum");
 
 /**
  * Returns the place values of a search.
@@ -24,7 +18,8 @@ module.exports = function(integer, search) {
 
 	let number = `${integer}`;
 	let matcher = new RegExp(`${search}`, "g");
-	let positions = [...number.matchAll(matcher)]
+	let places = [...number.matchAll(matcher)]
 		.map(match => (number.length - match.index));
-	return positions.map(position => places[position - 1]);
+	let placeColumns = PlaceColumns.values();
+	return places.map(position => placeColumns[position - 1]);
 };

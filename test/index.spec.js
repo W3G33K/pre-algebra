@@ -1,7 +1,7 @@
 /** @imports */
 const chai = require("chai");
 
-/** @globals */
+/** @module-globals */
 const expect = chai.expect;
 
 describe("Behavior Driven Design Spec", function() {

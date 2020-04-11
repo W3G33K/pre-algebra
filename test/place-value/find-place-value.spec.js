@@ -1,10 +1,10 @@
 /** @imports */
 const chai = require("chai");
-const subject = require("/src/place-value");
+const subject = require("../../src/place-value");
 
-const Types = require("/lib/enum/impl/types.enum");
+const Types = require("../../lib/enum/impl/types.enum");
 
-/** @globals */
+/** @module-globals */
 const expect = chai.expect;
 
 describe("Finding Place Value", function() {

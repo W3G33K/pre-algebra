@@ -7,70 +7,22 @@ const Types = require("../../lib/enum/impl/types.enum");
 /** @module-globals */
 const expect = chai.expect;
 
+const parameterizedTests = [
+	{actual: -1, expected: "negative one"}, {actual: -2, expected: "negative two"}, {actual: -3, expected: "negative three"},
+	{actual: -4, expected: "negative four"}, {actual: -5, expected: "negative five"}, {actual: -6, expected: "negative six"},
+	{actual: -7, expected: "negative seven"}, {actual: -8, expected: "negative eight"}, {actual: -9, expected: "negative nine"},
+	{actual: 0, expected: "zero"}, {actual: 1, expected: "one"}, {actual: 2, expected: "two"},
+	{actual: 3, expected: "three"}, {actual: 4, expected: "four"}, {actual: 5, expected: "five"},
+	{actual: 6, expected: "six"}, {actual: 7, expected: "seven"}, {actual: 8, expected: "eight"},
+	{actual: 9, expected: "nine"}
+];
+
 describe("Get Integer Expanded Form", function() {
-	it("expects 0 to be 'zero' in expanded form", function() {
-		let result = subject(0);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("zero");
-	});
-
-	it("expects 1 to be 'one' in expanded form", function() {
-		let result = subject(1);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("one");
-	});
-
-	it("expects 2 to be 'two' in expanded form", function() {
-		let result = subject(2);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("two");
-	});
-
-	it("expects 3 to be 'three' in expanded form", function() {
-		let result = subject(3);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("three");
-	});
-
-	it("expects 4 to be 'four' in expanded form", function() {
-		let result = subject(4);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("four");
-	});
-
-	it("expects 5 to be 'five' in expanded form", function() {
-		let result = subject(5);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("five");
-	});
-
-	it("expects 6 to be 'six' in expanded form", function() {
-		let result = subject(6);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("six");
-	});
-
-	it("expects 7 to be 'seven' in expanded form", function() {
-		let result = subject(7);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("seven");
-	});
-
-	it("expects 8 to be 'eight' in expanded form", function() {
-		let result = subject(8);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("eight");
-	});
-
-	it("expects 9 to be 'nine' in expanded form", function() {
-		let result = subject(9);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("nine");
-	});
-
-	it("expects -5 to be 'negative five' in expanded form", function() {
-		let result = subject(-5);
-		expect(result).to.be.a(Types.STRING);
-		expect(result).to.eq("negative five");
+	parameterizedTests.forEach(function(test) {
+		it(`expects ${test.actual} to be '${test.expected}' in expanded form`, function () {
+			let result = subject(test.actual);
+			expect(result).to.be.a(Types.STRING);
+			expect(result).to.eq(test.expected);
+		});
 	});
 });

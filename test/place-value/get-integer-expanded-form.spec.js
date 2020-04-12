@@ -8,6 +8,12 @@ const Types = require("../../lib/enum/impl/types.enum");
 const expect = chai.expect;
 
 describe("Get Integer Expanded Form", function() {
+	it("expects 0 to be 'zero' in expanded form", function() {
+		let result = subject(0);
+		expect(result).to.be.a(Types.STRING);
+		expect(result).to.eq("zero");
+	});
+
 	it("expects 1 to be 'one' in expanded form", function() {
 		let result = subject(1);
 		expect(result).to.be.a(Types.STRING);

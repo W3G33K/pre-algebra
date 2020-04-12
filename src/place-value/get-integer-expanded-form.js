@@ -1,5 +1,5 @@
 /** @module-globals */
-const digits = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+const digits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 /**
  * Returns the expanded form of an integer (e.g. 1,234 would yield one thousand two hundred thirty four).
@@ -10,7 +10,7 @@ const digits = ["one", "two", "three", "four", "five", "six", "seven", "eight", 
  * @throws {TypeError} Argument must be a valid integer.
  */
 function getIntegerExpandedForm(integer) {
-	return digits[integer - 1];
+	return digits[integer];
 }
 
 module.exports = getIntegerExpandedForm;

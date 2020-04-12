@@ -1,5 +1,5 @@
 /** @module-globals */
-const digits = ["one", "two"];
+const digits = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 /**
  * Returns the expanded form of an integer (e.g. 1,234 would yield one thousand two hundred thirty four).

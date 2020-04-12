@@ -67,4 +67,10 @@ describe("Get Integer Expanded Form", function() {
 		expect(result).to.be.a(Types.STRING);
 		expect(result).to.eq("nine");
 	});
+
+	it("expects -5 to be 'negative five' in expanded form", function() {
+		let result = subject(-5);
+		expect(result).to.be.a(Types.STRING);
+		expect(result).to.eq("negative five");
+	});
 });

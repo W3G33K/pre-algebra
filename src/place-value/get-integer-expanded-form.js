@@ -10,7 +10,7 @@ const digits = ["zero", "one", "two", "three", "four", "five", "six", "seven", "
  * @throws {TypeError} Argument must be a valid integer.
  */
 function getIntegerExpandedForm(integer) {
-	return digits[integer];
+	return (integer >= 0) ? digits[integer] : "negative " + digits[~integer + 1];
 }
 
 module.exports = getIntegerExpandedForm;

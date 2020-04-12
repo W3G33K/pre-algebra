@@ -1,3 +1,6 @@
+/** @module-globals */
+const digits = ["one", "two"];
+
 /**
  * Returns the expanded form of an integer (e.g. 1,234 would yield one thousand two hundred thirty four).
  *
@@ -7,7 +10,7 @@
  * @throws {TypeError} Argument must be a valid integer.
  */
 function getIntegerExpandedForm(integer) {
-	return "one";
+	return digits[integer - 1];
 }
 
 module.exports = getIntegerExpandedForm;

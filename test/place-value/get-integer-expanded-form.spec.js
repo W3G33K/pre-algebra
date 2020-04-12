@@ -13,4 +13,10 @@ describe("Get Integer Expanded Form", function() {
 		expect(result).to.be.a(Types.STRING);
 		expect(result).to.eq("one");
 	});
+
+	it("expects 2 to be 'two' in expanded form", function() {
+		let result = subject(2);
+		expect(result).to.be.a(Types.STRING);
+		expect(result).to.eq("two");
+	});
 });

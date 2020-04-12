@@ -1,9 +1,10 @@
 /** @module-globals */
 const lower = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+const upper = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 
 function expand(integer, base) {
 	if (base > 1) {
-		return "ten";
+		return upper[integer % 10];
 	}
 
 	return (integer >= 0) ? lower[integer - 1] : "negative " + lower[~integer];

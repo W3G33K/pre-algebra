@@ -14,7 +14,7 @@ const parameterizedTests = [
 	{actual: 0, expected: "zero"}, {actual: 1, expected: "one"}, {actual: 2, expected: "two"},
 	{actual: 3, expected: "three"}, {actual: 4, expected: "four"}, {actual: 5, expected: "five"},
 	{actual: 6, expected: "six"}, {actual: 7, expected: "seven"}, {actual: 8, expected: "eight"},
-	{actual: 9, expected: "nine"}, {actual: 10, expected: "ten"}
+	{actual: 9, expected: "nine"}, {actual: 10, expected: "ten"}, {actual: 15, expected: "fifteen"}
 ];
 
 describe("Get Integer Expanded Form", function() {

@@ -1,16 +1,21 @@
 /** @module-globals */
 const ones = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 const tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-const groups = ["hundred"];
+const groups = ["hundred", "thousand"];
+
+function base10(number) {
+	return Math.floor(Math.log10(number));
+}
 
 function expand(integer, base) {
 	let remainder = 0;
 
 	let result;
 	if (integer >= 100) {
-		let quotient = Math.floor(integer / 100);
-		remainder = integer - (quotient * 100);
-		result = expand(quotient, base) + " " + groups[0];
+		let scale = Math.pow(10, base);
+		let quotient = Math.floor(integer / scale);
+		remainder = integer - (quotient * scale);
+		result = expand(quotient, base) + " " + groups[base - 2];
 	} else if (integer >= 20) {
 		let quotient = Math.floor(integer / 10);
 		remainder = integer - (quotient * 10);
@@ -46,7 +51,7 @@ function getIntegerExpandedForm(integer) {
 		sign = "negative ";
 	}
 
-	return sign + expand(number, (number > 9) ? 2 : 1);
+	return sign + expand(number, base10(number));
 }
 
 module.exports = getIntegerExpandedForm;

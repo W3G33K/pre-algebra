@@ -1,10 +1,10 @@
 /** @module-globals */
 const ones = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-const tens = ["twenty"];
+const tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
 function expand(integer, base) {
 	if (integer >= 20) {
-		return tens[integer % 10];
+		return tens[(integer / 10) - 2];
 	} else {
 		return ones[integer - 1];
 	}

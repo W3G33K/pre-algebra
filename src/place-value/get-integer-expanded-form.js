@@ -6,9 +6,8 @@ const groups = ["hundred"];
 function expand(integer, base) {
 	let result = "";
 	if (integer >= 100) {
-		let quotient = Math.floor(integer / 100),
-			remainder = integer - (quotient * 100);
-		result = expand(1, base) + " " + groups[quotient - 1];
+		let quotient = Math.floor(integer / 100);
+		result = expand(quotient, base) + " " + groups[0];
 	} else if (integer >= 20) {
 		let quotient = Math.floor(integer / 10),
 			remainder = integer - (quotient * 10);

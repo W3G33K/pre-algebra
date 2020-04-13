@@ -1,10 +1,15 @@
 /** @module-globals */
 const ones = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 const tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+const groups = ["hundred"];
 
 function expand(integer, base) {
 	let result = "";
-	if (integer >= 20) {
+	if (integer >= 100) {
+		let quotient = Math.floor(integer / 100),
+			remainder = integer - (quotient * 100);
+		result = expand(1, base) + " " + groups[quotient - 1];
+	} else if (integer >= 20) {
 		let quotient = Math.floor(integer / 10),
 			remainder = integer - (quotient * 10);
 		result = tens[quotient - 2];

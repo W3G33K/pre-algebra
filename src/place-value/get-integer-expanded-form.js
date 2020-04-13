@@ -1,12 +1,12 @@
 /** @module-globals */
-const lower = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-const upper = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+const ones = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+const tens = ["twenty"];
 
 function expand(integer, base) {
-	if (base > 1) {
-		return upper[integer % 10];
+	if (integer >= 20) {
+		return tens[integer % 10];
 	} else {
-		return lower[integer - 1];
+		return ones[integer - 1];
 	}
 }
 

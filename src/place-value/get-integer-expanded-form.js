@@ -4,19 +4,23 @@ const tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty"
 const groups = ["hundred"];
 
 function expand(integer, base) {
-	let result = "";
+	let remainder = 0;
+
+	let result;
 	if (integer >= 100) {
 		let quotient = Math.floor(integer / 100);
+		remainder = integer - (quotient * 100);
 		result = expand(quotient, base) + " " + groups[0];
 	} else if (integer >= 20) {
-		let quotient = Math.floor(integer / 10),
-			remainder = integer - (quotient * 10);
+		let quotient = Math.floor(integer / 10);
+		remainder = integer - (quotient * 10);
 		result = tens[quotient - 2];
-		if (remainder > 0) {
-			result = result + " " + expand(remainder, base);
-		}
 	} else {
 		result = ones[integer - 1];
+	}
+
+	if (remainder > 0) {
+		result = result + " " + expand(remainder, base);
 	}
 
 	return result;

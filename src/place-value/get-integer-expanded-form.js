@@ -5,7 +5,7 @@ const tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty"
 function expand(integer, base) {
 	let result = "";
 	if (integer >= 20) {
-		let quotient = Math.round(integer / 10),
+		let quotient = Math.floor(integer / 10),
 			remainder = integer - (quotient * 10);
 		result = tens[quotient - 2];
 		if (remainder > 0) {

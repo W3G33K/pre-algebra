@@ -3,11 +3,19 @@ const ones = ["one", "two", "three", "four", "five", "six", "seven", "eight", "n
 const tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
 function expand(integer, base) {
+	let result = "";
 	if (integer >= 20) {
-		return tens[(integer / 10) - 2];
+		let quotient = Math.round(integer / 10),
+			remainder = integer - (quotient * 10);
+		result = tens[quotient - 2];
+		if (remainder > 0) {
+			result = result + " " + expand(remainder, base);
+		}
 	} else {
-		return ones[integer - 1];
+		result = ones[integer - 1];
 	}
+
+	return result;
 }
 
 /**

@@ -5,9 +5,9 @@ const upper = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "si
 function expand(integer, base) {
 	if (base > 1) {
 		return upper[integer % 10];
+	} else {
+		return lower[integer - 1];
 	}
-
-	return (integer >= 0) ? lower[integer - 1] : "negative " + lower[~integer];
 }
 
 /**
@@ -23,7 +23,14 @@ function getIntegerExpandedForm(integer) {
 		return "zero";
 	}
 
-	return expand(integer, (integer > 9) ? 2 : 1);
+	let number = integer,
+		sign = "";
+	if (number < 0) {
+		number = number * -1;
+		sign = "negative ";
+	}
+
+	return sign + expand(number, (number > 9) ? 2 : 1);
 }
 
 module.exports = getIntegerExpandedForm;

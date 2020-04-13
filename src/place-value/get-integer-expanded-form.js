@@ -15,7 +15,7 @@ function expand(integer, base) {
 		let scale = Math.pow(10, base);
 		let quotient = Math.floor(integer / scale);
 		remainder = integer - (quotient * scale);
-		result = expand(quotient, base) + " " + groups[base - 2];
+		result = expand(quotient, base - 1) + " " + groups[base - 2];
 	} else if (integer >= 20) {
 		let quotient = Math.floor(integer / 10);
 		remainder = integer - (quotient * 10);
@@ -25,7 +25,7 @@ function expand(integer, base) {
 	}
 
 	if (remainder > 0) {
-		result = result + " " + expand(remainder, base);
+		result = result + " " + expand(remainder, base - 1);
 	}
 
 	return result;

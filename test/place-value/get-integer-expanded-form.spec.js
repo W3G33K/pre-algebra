@@ -26,7 +26,11 @@ const parameterizedTests = [
 	{actual: -109, expected: "negative one hundred nine"}, {actual: -206, expected: "negative two hundred six"}, {actual: -303, expected: "negative three hundred three"},
 	{actual: 123, expected: "one hundred twenty three"}, {actual: 321, expected: "three hundred twenty one"}, {actual: 953, expected: "nine hundred fifty three"},
 	{actual: -555, expected: "negative five hundred fifty five"}, {actual: -777, expected: "negative seven hundred seventy seven"}, {actual: -333, expected: "negative three hundred thirty three"},
-	{actual: 1000, expected: "one thousand"}
+	{actual: 1000, expected: "one thousand"}, {actual: 5000, expected: "five thousand"}, {actual: 9000, expected: "nine thousand"},
+	{actual: -7000, expected: "negative seven thousand"}, {actual: -4000, expected: "negative four thousand"}, {actual: -2000, expected: "negative two thousand"},
+	{actual: 3001, expected: "three thousand one"}, {actual: 6006, expected: "six thousand six"}, {actual: 9009, expected: "nine thousand nine"},
+	{actual: -1001, expected: "negative one thousand one"}, {actual: -5001, expected: "negative five thousand one"}, {actual: -9001, expected: "negative nine thousand one"},
+	{actual: 4321, expected: "four thousand three hundred twenty one"}
 ];
 
 describe("Get Integer Expanded Form", function() {

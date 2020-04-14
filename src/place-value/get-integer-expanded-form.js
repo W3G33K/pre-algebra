@@ -12,7 +12,14 @@ function expand(integer, base) {
 
 	let result;
 	if (integer >= 100) {
-		let scale = Math.pow(10, base);
+		let scale;
+		if (base > 3) {
+			base = 3;
+			scale = Math.pow(10, 3);
+		} else {
+			scale = Math.pow(10, base);
+		}
+
 		let quotient = Math.floor(integer / scale);
 		remainder = integer - (quotient * scale);
 		result = expand(quotient, base - 1) + " " + groups[base - 2];

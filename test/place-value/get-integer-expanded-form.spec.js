@@ -35,7 +35,11 @@ const parameterizedTests = [
 	{actual: 50000, expected: "fifty thousand"}, {actual: 70000, expected: "seventy thousand"}, {actual: 90000, expected: "ninety thousand"},
 	{actual: -10000, expected: "negative ten thousand"}, {actual: -30000, expected: "negative thirty thousand"}, {actual: -50000, expected: "negative fifty thousand"},
 	{actual: 55555, expected: "fifty five thousand five hundred fifty five"}, {actual: 76543, expected: "seventy six thousand five hundred forty three"}, {actual: 98765, expected: "ninety eight thousand seven hundred sixty five"},
-	{actual: -34567, expected: "negative thirty four thousand five hundred sixty seven"}, {actual: -12345, expected: "negative twelve thousand three hundred forty five"}, {actual: -56473, expected: "negative fifty six thousand four hundred seventy three"}
+	{actual: -34567, expected: "negative thirty four thousand five hundred sixty seven"}, {actual: -12345, expected: "negative twelve thousand three hundred forty five"}, {actual: -56473, expected: "negative fifty six thousand four hundred seventy three"},
+	{actual: 600000, expected: "six hundred thousand"}, {actual: 500000, expected: "five hundred thousand"}, {actual: 400000, expected: "four hundred thousand"},
+	{actual: -600000, expected: "negative six hundred thousand"}, {actual: -500000, expected: "negative five hundred thousand"}, {actual: -400000, expected: "negative four hundred thousand"},
+	{actual: 123456, expected: "one hundred twenty three thousand four hundred fifty six"}, {actual: 234567, expected: "two hundred thirty four thousand five hundred sixty seven"}, {actual: 345678, expected: "three hundred forty five thousand six hundred seventy eight"},
+	{actual: -987654, expected: "negative nine hundred eighty seven thousand six hundred fifty four"}, {actual: -876543, expected: "negative eight hundred seventy six thousand five hundred forty three"}, {actual: -765432, expected: "negative seven hundred sixty five thousand four hundred thirty two"}
 ];
 
 describe("Get Integer Expanded Form", function() {

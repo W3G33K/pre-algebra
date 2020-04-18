@@ -1,7 +1,7 @@
 /** @module-globals */
 const ones = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 const tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-const groups = ["hundred", "thousand"];
+const groups = ["hundred", "thousand", "million"];
 
 function base10(number) {
 	return Math.floor(Math.log10(number));
@@ -12,17 +12,22 @@ function expand(integer, base) {
 
 	let result;
 	if (integer >= 100) {
-		let scale;
 		if (base > 3) {
-			base = 3;
-			scale = Math.pow(10, 3);
-		} else {
-			scale = Math.pow(10, base);
+			base = Math.floor(base / 3) * 3;
 		}
 
+		let scale = Math.pow(10, base);
 		let quotient = Math.floor(integer / scale);
 		remainder = integer - (quotient * scale);
-		result = expand(quotient, base - 1) + " " + groups[base - 2];
+
+		let group;
+		if (base > groups.length) {
+			group = groups[groups.length - 1];
+		} else {
+			group = groups[base - 2];
+		}
+
+		result = expand(quotient, base - 1) + " " + group;
 	} else if (integer >= 20) {
 		let quotient = Math.floor(integer / 10);
 		remainder = integer - (quotient * 10);

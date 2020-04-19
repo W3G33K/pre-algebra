@@ -40,7 +40,10 @@ const parameterizedTests = [
 	{actual: -600000, expected: "negative six hundred thousand"}, {actual: -500000, expected: "negative five hundred thousand"}, {actual: -400000, expected: "negative four hundred thousand"},
 	{actual: 123456, expected: "one hundred twenty three thousand four hundred fifty six"}, {actual: 234567, expected: "two hundred thirty four thousand five hundred sixty seven"}, {actual: 345678, expected: "three hundred forty five thousand six hundred seventy eight"},
 	{actual: -987654, expected: "negative nine hundred eighty seven thousand six hundred fifty four"}, {actual: -876543, expected: "negative eight hundred seventy six thousand five hundred forty three"}, {actual: -765432, expected: "negative seven hundred sixty five thousand four hundred thirty two"},
-	{actual: 1000000, expected: "one million"}
+	{actual: 1000000, expected: "one million"}, {actual: 3000000, expected: "three million"}, {actual: 5000000, expected: "five million"},
+	{actual: -9000000, expected: "negative nine million"}, {actual: -7000000, expected: "negative seven million"}, {actual: -5000000, expected: "negative five million"},
+	{actual: 1234567, expected: "one million two hundred thirty four thousand five hundred sixty seven"}, {actual: 2345678, expected: "two million three hundred forty five thousand six hundred seventy eight"}, {actual: 3456789, expected: "three million four hundred fifty six thousand seven hundred eighty nine"},
+	{actual: -1234567, expected: "negative one million two hundred thirty four thousand five hundred sixty seven"}, {actual: -2345678, expected: "negative two million three hundred forty five thousand six hundred seventy eight"}, {actual: -3456789, expected: "negative three million four hundred fifty six thousand seven hundred eighty nine"}
 ];
 
 describe("Get Integer Expanded Form", function() {
